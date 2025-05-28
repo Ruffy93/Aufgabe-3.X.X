@@ -10,7 +10,7 @@ def farbige_ausgabe(temp):
         return f"{ORANGE}{temp:.2f} °C{RESET}"
     else:
         return f"{ROT}{temp:.2f} °C{RESET}"
-    
+
 def celsius_zu_fahrenheit(c):
     return c * 9 / 5 + 32
 
@@ -29,10 +29,9 @@ def fahrenheit_zu_kelvin(f):
 def kelvin_zu_fahrenheit(k):
     return (k - 273.15) * 9 / 5 + 32
 
-
 def zeige_menue():
     print("\n" + "=" * 30)
-    print(" ❄️ 🥶 Temperaturumrechner🥵🔥")
+    print(" ❄️ 🥶 Temperaturumrechner 🥵🔥")
     print("=" * 30)
     print("\nUmrechnung wählen:")
     print("1: °C -> °F")
@@ -54,7 +53,8 @@ while True:
 
     elif auswahl == "2":
         f = float(input("°F eingeben: "))
-        print(f"{f} °F = {fahrenheit_zu_celsius(f):.2f} °C")
+        c = fahrenheit_zu_celsius(f)
+        print(f"{f} °F = {farbige_ausgabe(c)}")
 
     elif auswahl == "3":
         c = float(input("°C eingeben: "))
@@ -62,7 +62,8 @@ while True:
 
     elif auswahl == "4":
         k = float(input("K eingeben: "))
-        print(f"{k} K = {kelvin_zu_celsius(k):.2f} °C")
+        c = kelvin_zu_celsius(k)
+        print(f"{k} K = {farbige_ausgabe(c)}")
 
     elif auswahl == "5":
         f = float(input("°F eingeben: "))
